@@ -1,0 +1,6 @@
+UPDATE students
+SET age = 23
+WHERE student_id = 2;
+
+DELETE FROM students
+WHERE student_id = 3;
