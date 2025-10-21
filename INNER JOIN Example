@@ -1,0 +1,13 @@
+CREATE TABLE courses (
+    course_id INT PRIMARY KEY,
+    course_name VARCHAR(50),
+    student_id INT
+);
+
+INSERT INTO courses VALUES
+(101, 'DBMS', 1),
+(102, 'OS', 2);
+
+SELECT s.name, c.course_name
+FROM students s
+INNER JOIN courses c ON s.student_id = c.student_id;
