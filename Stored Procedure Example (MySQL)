@@ -1,0 +1,8 @@
+DELIMITER //
+CREATE PROCEDURE GetStudent(IN dep VARCHAR(30))
+BEGIN
+  SELECT * FROM students WHERE department = dep;
+END //
+DELIMITER ;
+
+CALL GetStudent('CSE');
