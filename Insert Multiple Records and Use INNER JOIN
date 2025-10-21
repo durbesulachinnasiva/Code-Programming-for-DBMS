@@ -1,0 +1,11 @@
+INSERT INTO Department VALUES
+(1, 'HR'), (2, 'IT'), (3, 'Finance');
+
+INSERT INTO Employee VALUES
+(101, 'Ravi', 40000, 1),
+(102, 'Ananya', 55000, 2),
+(103, 'Kiran', 60000, 3);
+
+SELECT e.emp_name, d.dept_name
+FROM Employee e
+JOIN Department d ON e.dept_id = d.dept_id;
