@@ -1,0 +1,4 @@
+CREATE VIEW student_details AS
+SELECT name, department FROM students;
+
+SELECT * FROM student_details;
