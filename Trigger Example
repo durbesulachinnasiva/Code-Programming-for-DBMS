@@ -1,0 +1,15 @@
+CREATE TABLE student_log (
+    log_id INT AUTO_INCREMENT PRIMARY KEY,
+    action VARCHAR(20),
+    student_name VARCHAR(50),
+    action_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+DELIMITER //
+CREATE TRIGGER after_student_insert
+AFTER INSERT ON students
+FOR EACH ROW
+BEGIN
+  INSERT INTO student_log(action, student_name) VALUES('INSERT', NEW.name);
+END //
+DELIMITER ;
