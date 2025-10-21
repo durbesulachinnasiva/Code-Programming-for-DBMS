@@ -1,0 +1,13 @@
+DECLARE
+  v_age NUMBER := &v_age;
+BEGIN
+  IF v_age < 18 THEN
+    RAISE_APPLICATION_ERROR(-20001, 'Not eligible for admission');
+  ELSE
+    DBMS_OUTPUT.PUT_LINE('Eligible for admission');
+  END IF;
+EXCEPTION
+  WHEN OTHERS THEN
+    DBMS_OUTPUT.PUT_LINE('Error: ' || SQLERRM);
+END;
+/
