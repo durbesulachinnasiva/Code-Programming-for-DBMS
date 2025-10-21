@@ -1,0 +1,16 @@
+import mysql.connector
+
+con = mysql.connector.connect(
+    host="localhost", user="root", password="yourpassword", database="university_db"
+)
+cur = con.cursor()
+sid = int(input("Enter student ID: "))
+name = input("Enter name: ")
+age = int(input("Enter age: "))
+dep = input("Enter department: ")
+
+query = "INSERT INTO students (student_id, name, age, department) VALUES (%s, %s, %s, %s)"
+cur.execute(query, (sid, name, age, dep))
+con.commit()
+print("Record inserted successfully.")
+con.close()
