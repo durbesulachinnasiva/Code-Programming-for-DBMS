@@ -1,0 +1,14 @@
+DECLARE
+  CURSOR cur IS SELECT name, age FROM students;
+  v_name students.name%TYPE;
+  v_age students.age%TYPE;
+BEGIN
+  OPEN cur;
+  LOOP
+    FETCH cur INTO v_name, v_age;
+    EXIT WHEN cur%NOTFOUND;
+    DBMS_OUTPUT.PUT_LINE(v_name || ' - ' || v_age);
+  END LOOP;
+  CLOSE cur;
+END;
+/
