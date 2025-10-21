@@ -1,0 +1,10 @@
+CREATE DATABASE university_db;
+
+USE university_db;
+
+CREATE TABLE students (
+    student_id INT PRIMARY KEY,
+    name VARCHAR(50),
+    age INT,
+    department VARCHAR(30)
+);
