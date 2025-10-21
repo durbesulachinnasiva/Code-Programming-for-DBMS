@@ -1,0 +1,6 @@
+INSERT INTO students VALUES
+(1, 'Ravi', 20, 'CSE'),
+(2, 'Priya', 22, 'ECE'),
+(3, 'Ankit', 21, 'ME');
+
+SELECT * FROM students;
